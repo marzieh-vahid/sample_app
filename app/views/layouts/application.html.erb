@@ -5,7 +5,7 @@
         <style type="text/css" media="screen">
 
      #h {
-        background-image: url("assets/saas.png");
+       
         background-repeat: no-repeat;
         background-position: center;
         height: 286px;
@@ -14,7 +14,7 @@
       }
 	  #h1{
 		  color: #99F;
-		  vertical-align:inherit;
+		 
 
 }
 	  #h2{
@@ -28,17 +28,17 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  <body >
+  <body id="h2" >
   
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
 
-          <%= link_to "sample app", root_path, id: "logo" %>
+          <%= link_to "sample app", '#', id: "logo" %>
           <nav>
             <ul class="nav pull-right">
-              <li><%= link_to "Home", root_path  %></li>
-              <li><%= link_to "Help",  help_path %></li>
+              <li> <a href="/home" >home</a></li>
+              <li><a href="/help" >help</a></li>
               <li><%= link_to "Sign in", '#' %></li>
             </ul>
           </nav>
@@ -56,14 +56,13 @@
     by Michael Hartl
 
   </small>
-<div id="h">
-<p align="right">Marzieh Vahid </p>
 
-</div>
+
+
   <nav>
     <ul>
-      <li><%= link_to "About",'#' %></li>
-      <li><%= link_to "Contact",'#' %></li>
+      <li><a href="/about">about</a></li>
+      <li><a href="/contact">contact</a> </li>
       <li><a href="http://news.railstutorial.org/">News</a></li>
     </ul>
   </nav>
