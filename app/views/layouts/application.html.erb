@@ -2,6 +2,25 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
+        <style type="text/css" media="screen">
+
+     #h {
+        background-image: url("assets/saas.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 286px;
+		text-align:center;
+		color:#99F;
+      }
+	  #h1{
+		  color: #99F;
+		  vertical-align:inherit;
+
+}
+	  #h2{
+		  background-color:#FCF;
+	  }
+	  </style>
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -9,7 +28,8 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body >
+  <div id="h2">
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
@@ -17,8 +37,8 @@
           <%= link_to "sample app", '#', id: "logo" %>
           <nav>
             <ul class="nav pull-right">
-              <li><%= link_to "Home",    '#' %></li>
-              <li><%= link_to "Help",    '#' %></li>
+              <li><%= link_to "Home", '#'  %></li>
+              <li><%= link_to "Help",  '#' %></li>
               <li><%= link_to "Sign in", '#' %></li>
             </ul>
           </nav>
@@ -34,15 +54,21 @@
   <small>
     <a href="http://railstutorial.org/">Rails Tutorial</a>
     by Michael Hartl
+
   </small>
+<div id="h">
+<p align="right">Marzieh Vahid </p>
+
+</div>
   <nav>
     <ul>
-      <li><%= link_to "About",   '#' %></li>
-      <li><%= link_to "Contact", '#' %></li>
+      <li><%= link_to "About",'#' %></li>
+      <li><%= link_to "Contact",'#' %></li>
       <li><a href="http://news.railstutorial.org/">News</a></li>
     </ul>
   </nav>
 </footer>
+    </div>
     </div>
   </body>
 </html>
