@@ -2,75 +2,20 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
-        <style type="text/css" media="screen">
-
-     #h {
-       
-        background-repeat: no-repeat;
-        background-position: center;
-        height: 286px;
-		text-align:center;
-		color:#99F;
-      }
-	  #h1{
-		  color: #99F;
-		 
-
-}
-	  #h2{
-		  background-color:#FCF;
-	  }
-	  </style>
-    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= stylesheet_link_tag "application", media: "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <%= render 'layouts/shim' %>
   </head>
-  <body id="h2" >
-   
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container">
-
-          <%= link_to "sample app","/", id: "logo" %>
-          <nav>
-            <ul class="nav pull-right">
-              <li> <a href="/" >home</a></li>
-              <li><a href="/help" >help</a></li>
-              <li><%= link_to "Sign in", '#' %></li>
-            </ul>
-          </nav>
-
-        </div>
-      
-    </header>
-
+  <body>
+    <%= render 'layouts/header' %>
     <div class="container">
-            <%= yield %>
-      
-      <footer class="footer">
-  <small>
-    <a href="http://railstutorial.org/">Rails Tutorial</a>
-    by Michael Hartl,app by Marzieh Vahid
-
-  </small>
-
-
-  <nav>
-    <ul>
-      <li><a href="/about">about</a></li>
-      <li><a href="/contact">contact</a> </li>
-      <li><a href="http://news.railstutorial.org/">News</a></li>
-    </ul>
-  </nav>
-
-
-</footer>
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+      <%= debug(params) if Rails.env.development? %>
     </div>
-    </div>
-
-<%= debug(params) if Rails.env.development? %>
   </body>
 </html>
