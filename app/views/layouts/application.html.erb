@@ -29,12 +29,12 @@
     <![endif]-->
   </head>
   <body id="h2" >
-  
+   
     <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
 
-          <%= link_to "sample app", '#', id: "logo" %>
+          <%= link_to "sample app","/", id: "logo" %>
           <nav>
             <ul class="nav pull-right">
               <li> <a href="/" >home</a></li>
@@ -49,14 +49,13 @@
 
     <div class="container">
             <%= yield %>
-
+      
       <footer class="footer">
   <small>
     <a href="http://railstutorial.org/">Rails Tutorial</a>
     by Michael Hartl,app by Marzieh Vahid
 
   </small>
-
 
 
   <nav>
@@ -66,8 +65,12 @@
       <li><a href="http://news.railstutorial.org/">News</a></li>
     </ul>
   </nav>
+
+
 </footer>
     </div>
     </div>
+
+<%= debug(params) if Rails.env.development? %>
   </body>
 </html>
