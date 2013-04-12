@@ -71,6 +71,12 @@ describe "User pages" do
       it { should have_content(m2.content) }
       it { should have_content(user.microposts.count) }
     end
+    describe "edit" do
+    let(:user) { FactoryGirl.create(:user) }
+    before do
+      sign_in user
+      visit edit_user_path(user)
+    end
 
     describe "follow/unfollow buttons" do
       let(:other_user) { FactoryGirl.create(:user) }
