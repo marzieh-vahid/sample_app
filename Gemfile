@@ -41,4 +41,13 @@ end
 
 group :production do
   gem 'pg', '0.12.2'
+<<<<<<< HEAD
+end
+group :development do
+  gem 'guard'
+end
+group :development do
+  gem 'guard-rspec'
+=======
+>>>>>>> 90a258af06f89aac4c032072a3b0a8e51ac2a712
 end
